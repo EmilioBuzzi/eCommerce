@@ -1,0 +1,646 @@
+/*
+Paleta de colores
+Amarillo: #EAC926;
+Azul: #03264C;
+Celeste: #1259c3;
+Gris oscuro: #666;
+Gris claro: #ebebeb;
+Verde: #39b54a;
+*/
+
+/*
+Tamaños Tipográficos
+Cuerpos de texto: 12px
+Titulares (Basado en tu última visita/Ofertas): 24px
+Precios: 18px
+Descuentos: 16px
+Descripciones: 16px
+*/
+
+/* Asignación Universal: Solo usar de esta forma ya que aplica a todos los elementos del sitio */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+main {
+    text-align: center;
+    /* Debemos centrar la sección main y que ocupe un 90% del ancho de la pantalla. */
+    /* width: 99%;  */
+    background-color: #ebebeb;
+}
+
+.main-header {
+    background-color: #EAC926;
+    padding: 20px;
+
+}
+
+.main-header-top-bar {
+  display: flex;
+  /* flex-wrap: nowrap;  */
+  /* justify-content:space-around; */
+  padding: 10px; 
+  
+}
+
+.main-header-search {
+    display: none;
+    font-size: 16px;
+    width: 47vw;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 4px;
+    padding: 12px 20px;
+    background-image: url('/image/searchicon.jpg');
+    background-size:3vw;
+    background-position:right;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.logo {
+    width: 35vw;
+    padding: 0px 10px 10px 0px;
+    /* object-fit:scale-down;  */
+}
+
+.magnify {
+    color: black;
+    background-color: #fff;
+    border-color: black;
+    border-width: 1px;
+    display: block;
+    max-width: 50px;
+    padding: 3px 3px;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 12px;
+    margin:auto;
+}
+
+.copy-header {
+    font-weight: bold;
+    text-align: center;
+    /* font-size: 14px;
+    padding: 10px; */
+}
+
+.hamburguer-button {
+    background-color: #03264C;
+    color: white;
+    display: block;
+    max-width: 50px;
+    padding: 15px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    margin:auto;
+}
+
+/* Solo para la versión mobile, ocultar el site y el login navbar. */
+.main-navbar {
+    display: none;
+}
+
+.main-navbar ul {
+    list-style: none;
+    /* margin: 0px;
+    padding: 0px; */
+}
+
+.main-navbar a {
+    text-decoration: none;
+    color: #222222;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 17px;
+}
+
+.main-title-last-visit,
+.main-title-offers {
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 10px;
+    color: #666;
+}
+
+.products {
+     border: 15px;
+     display: flex;
+     flex-wrap: wrap;
+     max-width: 100%;
+     /* justify-content: center;
+     align-items: center; */
+}
+
+.product {
+        /* display: flex; */
+        
+        /* Nos piden que la misma tenga un borde superior de 1 píxel, línea sólida y color #ebebeb. */
+        border-top: solid 1px #ebebeb;
+        /*  Entre cada artículo hay una separación de 10 píxeles. */
+        margin-bottom: 10px;
+        text-align: center;
+        background-color: white;
+        /* Debe tener separado el contenido de sus bordes en 15 píxeles en cada uno de sus lados. */
+        padding: 15px;
+        border-bottom:  solid 15px #ebebeb;
+        border: solid 20px rgba(0, 0, 0, 0);
+        transition: all 450ms;
+        width: 93%;
+        margin: 10px;
+        justify-content: center;
+}
+
+.product-img {
+    /* object-fit: cover; */
+    /* display: flex; */
+    padding: 2px;
+    border: 2px;
+    width: 100%;
+    background-color: white;
+    color: white;
+    image-rendering: auto;
+}
+
+.product-container-info {
+    /* Lograr que el precio y el descuento de los artículos estén en el mismo renglón, */
+    /* display: flex;   */
+    border-top: 1px solid #ebebeb;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+}
+
+.product-icon {
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    color: #39b54a;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    transition: 450ms;
+    justify-content: flex-end;
+
+}
+
+.product-icon:hover{
+    transform: rotateZ(-90deg);
+}
+
+.product-detail {
+    display: flex; 
+    
+}
+
+.product-price {
+    /* display: flex; */
+    font-size: 18px;
+    padding: 5px;
+    /* donde el precio ocupa el 30% */
+    width: 30vw;
+    vertical-align: left;
+    flex-wrap: wrap;
+    justify-content: left;
+    /* position: relative; */
+}
+
+.product-discount {
+    /* display: flex; */
+    font-size: 16px;
+    color: #39b54a;
+    padding: 5px;
+    /* el descuento el 70% del total del renglón. */
+    width: 70vw;
+    text-align: left;
+    /* position: relative; */
+}
+
+/* NO LOGRO QUE LA DECRIPCION SE COLOQUE ABAJO A LA IZQUIERDA */
+.product-name {
+    width: 100%;
+    display: none;
+    height: 50%;
+    font-size: 16px;
+    color: grey;
+    text-align: left;
+    padding: 5px;
+}
+
+.main-home-banner {
+    /* object-fit: cover; */
+    width: 100%;
+    height: 100%;
+}
+
+.main-footer {
+    text-align: center;
+}
+
+.main-footer-ads {
+    padding: 5px;
+}
+
+.main-footer-ad {
+    padding: 5px;
+    font-size: 16px;
+    color: grey;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main-footer-ad-desc {
+    font-size: 14px;
+    padding: 0px 30px 0px;
+
+}
+
+.main-footer-copyright {
+    font-size: 12px;
+    padding: 15px 0px 0px 5px;
+    text-align: left;
+}
+
+.footer-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #1259C3;
+}
+
+.formRegister {
+    text-align: center;
+    width: 100%;
+    background-color: #ebebeb;
+}
+
+.login p{
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login p:hover{
+    text-decoration: underline
+}
+
+.box-login{
+    border: 1px solid grey;
+    margin-bottom: 15px;
+    padding: 11px 25px;
+    background-color:white;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.enviar{
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    padding: 8px 15px;    
+    background-color: #1259c3;
+    color: #fff;
+    border: 0;
+    
+}
+
+.register {
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.register li{
+    margin: 0;
+    font-size: 14px;
+    display: flex;
+   
+}
+.text-input{
+    border: 1px solid grey;
+    width: 50%;
+    padding: 11px;
+    margin: 0;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    /* display: flex; */
+    text-align: center;
+    /* justify-content: center; */
+}
+
+.register-subtitles{
+    font-size: 20px;
+    color:grey;
+    padding: 20px;
+}
+
+.register-chk {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    /* width: 50%; */
+}
+
+/* Navegación en tablets (ancho mínimo 361 px) */
+@media (min-device-width: 361px){
+    /* Para las versiones desktop y tablet mostrar el site y login navbar, pero ocultar la imagen del menú hamburguesa. */
+    .main-header-top-bar,
+    .main-navbar,
+    .main-header-top-buy {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        margin: auto;
+
+    }
+    .copy-header {
+        /* display: flex;
+        position: relative; */
+        font-weight: bold;
+        text-align: center;
+        font-size: 19px;
+        padding: 10px;
+        /* justify-content: space-between; */
+    }
+
+    .hamburguer-button {
+        display: none;
+    }
+
+    .main-navbar {
+        display:flex;
+        justify-content:space-between;
+    }
+
+    .main-navbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        max-width: 100%;
+        font-size: 8px;
+    }
+
+    .main-navbar li {
+        margin: 0 5px;
+    }
+
+    .product {
+        /* Agregar box-shadow. Para los dispositivos tablet o de resoluciones superiores, */
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        /* Aplicando Flexbox, dos artículos para tablet */
+        /* flex-grow: 0.5; */
+        max-width: 50%;
+        /* flex-wrap: nowrap;  */
+
+    }
+
+    .product-name {
+        display: flex;
+    }
+
+    .main-header-search {
+        display: block;
+    }
+}
+
+/* Navegación en desktop (ancho mínimo 769 px) */
+@media (min-device-width: 769px){
+
+    /* Para las versiones desktop y tablet mostrar el site y login navbar, pero ocultar la imagen del menú hamburguesa. */
+    .main-header-top-bar,
+    .main-navbar, 
+    .main-header-top-buy {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+    }
+
+    .copy-header {
+        display: flex;
+        position: relative;
+        font-weight: bold;
+        text-align: center;
+        font-size: 22px;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .main-navbar {
+        margin-top: 40px;
+        justify-content: space-around;
+        position: relative;
+    }
+
+    .main-navbar li {
+        margin: 0 15px;
+    }
+
+    .main-navbar a {
+        font-size: 19px;
+    }
+
+    .product {
+        /* Agregar box-shadow. Para los dispositivos tablet o de resoluciones superiores, */
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        /* Aplicando Flexbox, cuatro artículos para escritorio */
+        /* flex-grow: 0.25; */
+        max-width: 25%;
+        /* flex-wrap: nowrap; */
+    }
+    
+    .logo {
+        width: 40vw;
+    }
+}
+
+
+
+/* ----------------------------------- OLD ---------------------------------------- */
+/* main {
+    text-align: center;
+    width: 90%;
+    background-color: #ebebeb;
+}
+
+.formRegister {
+    text-align: center;
+    width: 50%;
+    background-color: #ebebeb;
+}
+.producto {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: solid 1px #ebebeb;
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+    margin: 15px;
+    border-bottom:  solid 15px #ebebeb;
+}
+
+-- Product Price --
+
+.div1 {
+    display: flex;
+    width: 30%;
+    height: 50%;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+-- Product Discount --
+.div2 {
+    display: flex;
+    width: 70%;
+    height: 50%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.div3 {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+    border-top: 1px solid #ebebeb;
+    position: relative;
+    padding: 15px;
+}
+
+
+.div3 i {
+    display: block;
+    font-size: 16;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    color: #39b54a;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    display: flex;
+    padding: 15px;
+    width: 100%;
+    height: 50%;
+    font-size: 16px;
+    color: grey;
+    text-align: center;
+}
+
+.precios {
+    font-size: 18px;
+}
+
+.descuentos {
+    font-size: 16px;
+    color: #39b54a
+
+}
+
+p.cuotas {
+    text-align: center;
+}
+
+.myDiv {
+    text-align: center;
+}
+
+.foto {
+    align-content: center;
+}
+
+.img {
+    background-color: #03264C;
+    color: white;
+    image-rendering: auto;
+}
+
+
+footer {
+    text-align: center;
+}
+
+.register {
+
+    max-width: 100%;
+    height: 50%;
+    padding: 5px;
+
+}
+
+h6 {
+
+    padding: 5px;
+    width: 100%;
+    height: 50%;
+    font-size: 14px;
+    color: grey;
+    text-align: center;
+}
+
+.banner {
+    text-align: center;
+}
+
+
+@media (max-width: 480px) {
+    h4 {
+        display: none;
+    }
+    div.producto {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 1279px) {
+
+}
+
+@media (min-width: 1280px) {
+
+}
+
+
+
+
+ */
